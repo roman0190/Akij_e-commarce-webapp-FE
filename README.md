@@ -8,4 +8,4 @@ I used Nextjs and Tailwind Css for Frontend .
 
 ## Signup Page
 
-![alt text](image-1.png)
+![alt text](<Screenshot 2024-09-07 at 8.09.27 PM.png>)
