@@ -1,29 +1,37 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 const list = [
   {
     id: 1,
     name: "Rocking chair",
-    Path: "/",
+    Path: "",
   },
   {
     id: 2,
     name: "Side chair",
-    Path: "/",
+    Path: "",
   },
   {
     id: 3,
     name: "Lounge chair",
-    Path: "/",
+    Path: "",
   },
 ];
+
 const Sidebar = () => {
+  const [selectedId, setSelectedId] = useState(1);
   return (
     <div className="flex flex-col gap-[12px] pt-[40px] w-[263px] h-[1000px] border-r">
       {list.map((item) => (
         <a
           key={item.id}
-          href=""
-          className="flex items-center px-[24px] rounded-lg text-[#717171]  text-[22px] h-[53px] w-[231px] font-medium hover:font-semibold hover:bg-black hover:text-white "
+          onClick={() => setSelectedId(item.id)}
+          href="#"
+          className={`flex items-center px-[24px] rounded-lg text-[22px] h-[53px] w-[231px] font-medium ${
+            selectedId === item.id
+              ? "bg-black text-white font-semibold"
+              : "text-[#717171]  "
+          }`}
         >
           {item.name}
         </a>
