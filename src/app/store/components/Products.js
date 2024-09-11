@@ -4,22 +4,25 @@ import Image from "next/image";
 
 import productsData from "../../Data/Product.json";
 
-const priceAfterDiscount = (mainPrice, discountPercentage) => {
-  const discountAmount = (mainPrice * discountPercentage) / 100;
-
-  return mainPrice - discountAmount;
+const calculateMainPrice = (discountedPrice, discountPercentage) => {
+  return (discountedPrice / (1 - discountPercentage / 100)).toFixed(2);
 };
 
-const updatedProductList = productsData.map((product) => ({
-  ...product,
-  price: priceAfterDiscount(product.mainPrice, product.discount),
-}));
+const updatedProductList = productsData.map((product) => {
+  const mainPrice = calculateMainPrice(product.discountedPrice, product.discount);
+
+  return {
+    ...product,
+    mainPrice: mainPrice,
+  };
+});
+
 
 const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  // Calculate the index of the first and last item for the current page
+ 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = updatedProductList.slice(
@@ -27,7 +30,7 @@ const Products = () => {
     indexOfLastItem
   );
 
-  // Function to handle page change
+  
   const handlePageChange = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -59,7 +62,7 @@ const Products = () => {
               </span>
               <div className="flex gap-3">
                 <span className="text-[#343434] font-bold text-[18px]">
-                  €{item.price}
+                  €{item.discountedPrice}
                 </span>
                 <s className="text-[#ABABAB] font-semibold text-[18px]">
                   €{item.mainPrice}

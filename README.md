@@ -13,3 +13,8 @@ I used Nextjs and Tailwind Css for Frontend .
 
 ## Products Page
 ![alt text](screencapture-localhost-3000-store-2024-09-11-17_59_06.png)
+
+
+## Product Cart
+
+![alt text](screencapture-localhost-3000-store-cart-2024-09-12-03_14_37.png)

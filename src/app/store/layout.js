@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 export default function HomeLayout({ children }) {
   return (
-    <section  >
+    <section>
       <Header />
       {children}
       <Footer />
