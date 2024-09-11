@@ -4,17 +4,17 @@ const list = [
   {
     id: 1,
     name: "Rocking chair",
-    Path: "",
+    Path: "#Footer",
   },
   {
     id: 2,
     name: "Side chair",
-    Path: "",
+    Path: "#Header",
   },
   {
     id: 3,
     name: "Lounge chair",
-    Path: "",
+    Path: "#Cart",
   },
 ];
 
@@ -26,7 +26,7 @@ const Sidebar = () => {
         <a
           key={item.id}
           onClick={() => setSelectedId(item.id)}
-          href="#"
+          href={item.Path}
           className={`flex items-center px-[24px] rounded-lg text-[22px] h-[53px] w-[231px] font-medium ${
             selectedId === item.id
               ? "bg-black text-white font-semibold"

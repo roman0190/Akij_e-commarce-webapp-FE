@@ -1,10 +1,9 @@
-import Sidebar from "./store/components/Sidebar";
-
+import Cart from "./store/cart/page";
 
 export default function Home() {
   return (
     <div className="">
-      <Sidebar />
+      <Cart />
     </div>
   );
 }

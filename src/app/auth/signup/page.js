@@ -103,7 +103,7 @@ const Signup = () => {
       <div className="relative ImageField  w-1/2 flex items-center justify-center overflow-hidden">
         <div className="absolute flex flex-col items-center gap-2 w-[445px]">
           <div className="flex items-center justify-center bg-[#1E99F5] w-[85px] h-[85px] rounded-full">
-            <span className="text-[36px] text-black font-serif">F</span>
+            <span className="text-[36px] text-black font-serif italic">F</span>
           </div>
           <h1 className="text-5xl font-bold ">
             <span>Furni</span>

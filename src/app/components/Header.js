@@ -31,7 +31,7 @@ const Barlist = [
 
 const Header = () => {
   return (
-    <div className="header flex h-[118px] items-center justify-between bg-white pl-[120px] pr-[120px] text-black border-b">
+    <div className="header flex h-[118px] items-center justify-between bg-white pl-[120px] pr-[120px] text-black border-b overflow-y-auto">
       <a href="/" className="logo flex gap-1">
         <div className="bg-[#1E99F5] h-[38px] w-[38px] flex items-center justify-center rounded-full  italic text-[24px]">
           <span>f</span>
@@ -44,19 +44,23 @@ const Header = () => {
       </a>
       <div className="middle-selection flex  gap-[3.5rem] font-medium  h-20 items-center">
         {Barlist.map((item) => (
-          <a key={item.id} href={item.link} className='hover:bg-slate-300/45 p-1 rounded-lg hover:pt-2 '>
+          <a
+            key={item.id}
+            href={item.link}
+            className="hover:bg-slate-300/45 p-1 rounded-lg hover:pt-2 "
+          >
             {item.name}
           </a>
         ))}
       </div>
       <div className="shops&profile-icon flex items-center justify-center gap-5">
         <button className="shops relative ">
-          <div className=" absolute flex w-[16px] h-[16px] bg-[#323232] items-center justify-center rounded-full translate-x-4 translate-y-[1.1rem]">
+          <div className=" absolute flex w-[16px] h-[16px] bg-[#323232] items-center justify-center rounded-full translate-x-4 translate-y-[1.1rem] mx-auto">
             <span className="text-[11.2px] font-medium text-white">2</span>
           </div>
           <Image
             src="/assets/icons/Added.svg"
-            className="w-[33px] h-[34px]"
+            className="min-w-[33px] w-[33px] min-h-[34px] h-[34px]"
             alt="alt"
             width={1440}
             height={1440}
@@ -66,7 +70,7 @@ const Header = () => {
           <Image
             src="/assets/icons/Account.svg"
             alt="alt"
-            className="w-[40px] h-[40px]"
+            className="w-[40px] min-w-[40px] min-h-[40px] h-[40px]"
             width={1440}
             height={1440}
           />

@@ -26,11 +26,11 @@ const SocialInfo = [
 
 const Footer = () => {
   return (
-    <div className="Footer h-[590px] text-white  px-[120px] pt-[80px] ">
-      <div className="top-info flex justify-between ">
+    <div className="Footer flex flex-col h-[590px] text-white  px-[120px] pt-[80px] ">
+      <div className="top-info sm:flex  justify-between">
         <div>
           <a href="/" className="logo flex gap-1">
-            <div className="bg-[#1E99F5] h-[38px] w-[38px] flex items-center justify-center rounded-full  italic text-[24px]">
+            <div className="bg-[#1E99F5] h-[38px] min-h-[38px] w-[38px] min-w-[38px] flex items-center justify-center rounded-full  italic text-[24px]">
               <span className="text-black">f</span>
             </div>
             <div className="flex items-center text-[20px] font-bold ">
@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
           </a>
         </div>
-        <div className="flex gap-[120px] ">
+        <div className="flex flex-col sm:flex-row gap-[120px] ">
           <div className="flex flex-col  text-[18px] gap-2 text-[#81859F]">
             <a href="" className="font-semibold text-white mb-[28px]">
               About US
@@ -74,7 +74,7 @@ const Footer = () => {
       <div className="mt-[120px] mb-[40px]">
         <hr className="border-t-[0.01px] border-[#252948]" />
       </div>
-      <div className="middel-social-info flex justify-between items-center ">
+      <div className="middel-social-info flex flex-col sm:flex-row  justify-between items-center ">
         <div className="socials-icons flex gap-2">
           {SocialInfo.map((item) => (
             <a key={item.id} href={item.link}>

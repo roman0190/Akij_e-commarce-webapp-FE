@@ -9,3 +9,8 @@ I used Nextjs and Tailwind Css for Frontend .
 ## Signup Page
 
 ![alt text](<Screenshot 2024-09-07 at 8.09.27 PM.png>)
+
+
+## Products Page
+
+![alt text](<Screenshot 2024-09-11 at 5.43.36 PM.png>)
