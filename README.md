@@ -12,6 +12,4 @@ I used Nextjs and Tailwind Css for Frontend .
 
 
 ## Products Page
-
-![alt text](<Screenshot 2024-09-11 at 5.43.36 PM.png>)
-![alt text](<Screenshot 2024-09-11 at 5.51.47 PM.png>)
+![alt text](screencapture-localhost-3000-store-2024-09-11-17_59_06.png)
