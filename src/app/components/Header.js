@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
 const Barlist = [
   {
@@ -30,6 +32,12 @@ const Barlist = [
 ];
 
 const Header = () => {
+  const router = useRouter();
+
+  const handleCartClick = () => {
+    router.push("../store/cart"); 
+  };
+
   return (
     <div className="header flex h-[118px] items-center justify-between bg-white pl-[120px] pr-[120px] text-black border-b overflow-y-auto">
       <a href="/" className="logo flex gap-1">
@@ -54,7 +62,7 @@ const Header = () => {
         ))}
       </div>
       <div className="shops&profile-icon flex items-center justify-center gap-5">
-        <button className="shops relative ">
+        <button onClick={handleCartClick} className="shops relative ">
           <div className=" absolute flex w-[16px] h-[16px] bg-[#323232] items-center justify-center rounded-full translate-x-4 translate-y-[1.1rem] mx-auto">
             <span className="text-[11.2px] font-medium text-white">2</span>
           </div>

@@ -1,21 +1,28 @@
 "use client";
-import React from "react";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import ProductCart from "../../../Data/Product.json";
 
 const Products = ProductCart;
 const OrderView = () => {
-  const [count, setCount] = useState(1);
+  // Initialize state for each product count
+  const [counts, setCounts] = useState(Products.map(() => 1)); // Default to 1 for all products
 
-  const handleIncrease = () => {
-    setCount(count + 1); // Increase the count by 1
+  const handleIncrease = (index) => {
+    // Create a new array with updated count for the specific product
+    const newCounts = [...counts];
+    newCounts[index] += 1; // Increase the count for the specific product
+    setCounts(newCounts);
   };
-  const handleDecrease = () => {
-    if (count > 0) {
-      setCount(count - 1); // Decrease the count by 1
+
+  const handleDecrease = (index) => {
+    const newCounts = [...counts];
+    if (newCounts[index] > 0) {
+      newCounts[index] -= 1; // Decrease the count for the specific product
     }
+    setCounts(newCounts);
   };
+
   return (
     <div className="order-view w-[860px]  max-h-[914px] h-auto flex flex-col gap-8 text-[#1E1E1E]">
       <div>
@@ -29,9 +36,9 @@ const OrderView = () => {
             <div className="flex px-2 py-2">
               <div className="flex  items-center  w-[235px] justify-between">
                 <div className="border-[1px] flex h-[44px] w-[77px] items-center justify-between px-4 rounded-lg">
-                  <button onClick={handleDecrease}>-</button>
-                  <sapn className="font-bold">{count}</sapn>
-                  <button onClick={handleIncrease}>+</button>
+                  <button onClick={() =>handleDecrease(index)}>-</button>
+                  <sapn className="font-bold">{counts[index]}</sapn>
+                  <button onClick={() =>handleIncrease(index)}>+</button>
                 </div>
 
                 <Image

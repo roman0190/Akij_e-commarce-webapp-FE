@@ -1,6 +1,12 @@
 import React from "react";
+import ProductCart from "../../../Data/Product.json";
 
 const Details = () => {
+  const subtotal = ProductCart.reduce(
+    (total, product) => total + product.discountedPrice,
+    0
+  );
+
   return (
     <div className="order-view w-[440px]  flex flex-col gap-8 ">
       <div>
@@ -13,7 +19,7 @@ const Details = () => {
           <div className="flex flex-col mt-5 gap-2 text-[18px] text-[#656565] font-extralight">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>€ 1071.00</span>
+              <span>€ {subtotal}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping</span>
@@ -26,12 +32,14 @@ const Details = () => {
             <hr />
             <div className="flex justify-between my-5 font-bold text-black">
               <span>Total</span>
-              <span>€ 1071.00</span>
+              <span>€ {subtotal}</span>
             </div>
           </div>
         </div>
 
-        <button className=" bg-black h-[56px] mt-5 rounded-lg">Go to Checkout</button>
+        <button className=" bg-black h-[56px] mt-5 rounded-lg">
+          Go to Checkout
+        </button>
       </div>
     </div>
   );
