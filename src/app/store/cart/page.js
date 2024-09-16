@@ -4,7 +4,7 @@ import Details from "./components/Details";
 
 const Cart = () => {
   return (
-    <div className="h-screen bg-white px-[120px] flex  py-[20px] gap-[8rem]">
+    <div className="h-auto bg-white px-[120px] flex  py-[20px] gap-[8rem]">
       <div>
         <OrderView />
       </div>
