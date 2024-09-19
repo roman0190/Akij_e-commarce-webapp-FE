@@ -1,7 +1,14 @@
+'use client'
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const route = useRouter();
+
+  const handleClick = () =>{
+    route.push('../../store')
+  }
   return (
     <div className="base flex h-lvh">
       <div className="loginField bg-white  w-1/2 flex items-center justify-center overflow-hidden">
@@ -35,7 +42,7 @@ const Login = () => {
               </span>
             </div>
             <div>
-              <button className="w-[451px] h-[56px] border rounded-md p-1 pl-2 font-semibold bg-black text-white  ">
+              <button onClick ={handleClick}  className="w-[451px] h-[56px] border rounded-md p-1 pl-2 font-semibold bg-black text-white  ">
                 Login
               </button>
             </div>
